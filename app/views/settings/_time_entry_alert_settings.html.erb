@@ -1,0 +1,19 @@
+<p>
+The plugin requires a cron job, that will trigger the execution of the report.
+Please setup cron to run at your desired time, and call
+<code>bundle exec rake time_entry_alerts:alert</code>.
+</p>
+
+<!--
+<p>
+  <%= label_tag 'settings[timezone]', t('configuration.timezone') %>
+  <%= select_tag 'settings[timezone]', time_zone_options_for_select(settings['timezone']) %>
+</p>
+-->
+
+<p>
+  <%= label_tag 'settings[daily_required_hours]', t('configuration.daily_required_hours') %>
+  <%= number_field_tag 'settings[daily_required_hours]',
+                       settings['daily_required_hours'],
+                       :in => (0..24) %>
+</p>
